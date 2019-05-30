@@ -38,13 +38,11 @@ multiply();
 void drawhouse(GLfloat mat[3][3])
 {
 glBegin(GL_TRIANGLES);
-
 glVertex2f(mat[0][0],mat[1][0]);
 glVertex2f(mat[0][1],mat[1][1]);
 glVertex2f(mat[0][2],mat[1][2]);
 glEnd();
 }
-
 
 void display()
 {
