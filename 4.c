@@ -46,11 +46,11 @@ glutSwapBuffers();
 }
 void mouse(int btn, int state, int x, int y)
 {
-if(btn==GLUT_LEFT_BUTTON && state == GLUT_DOWN) axis = 0;
-if(btn==GLUT_MIDDLE_BUTTON && state == GLUT_DOWN) axis = 1;
-if(btn==GLUT_RIGHT_BUTTON && state == GLUT_DOWN) axis = 2;
-theta[axis] += 2.0;
-if( theta[axis] > 360.0 ) theta[axis] -= 360.0;
+if(btn==GLUT_LEFT_BUTTON && state==GLUT_DOWN)axis= 0;
+if(btn==GLUT_MIDDLE_BUTTON && state==GLUT_DOWN)axis= 1;
+if(btn==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)axis= 2;
+theta[axis]+= 2.0;
+if( theta[axis]>360.0 ) theta[axis]-= 360.0;
 display();
 }
 void keys(unsigned char key, int x, int y)
@@ -68,10 +68,10 @@ void myReshape(int w, int h)
 glViewport(0, 0, w, h);
 glMatrixMode(GL_PROJECTION);
 glLoadIdentity();
-if(w<=h) glFrustum(-2.0, 2.0, -2.0 * (GLfloat) h/ (GLfloat) w,
-2.0* (GLfloat) h / (GLfloat) w, 2.0, 20.0);
-else glFrustum(-2.0, 2.0, -2.0 * (GLfloat) w/ (GLfloat) h,
-2.0* (GLfloat) w / (GLfloat) h, 2.0, 20.0);
+if(w<=h) 
+glFrustum(-2.0, 2.0, -2.0*(GLfloat)h / (GLfloat)w, 2.0* (GLfloat)h / (GLfloat)w, 2.0, 20.0);
+else
+glFrustum(-2.0, 2.0, -2.0*(GLfloat)w / (GLfloat)h, 2.0*(GLfloat)w / (GLfloat)h, 2.0, 20.0);
 glMatrixMode(GL_MODELVIEW);
 }
 int main(int argc, char **argv)
