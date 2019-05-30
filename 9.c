@@ -46,7 +46,7 @@ edgedetect(x4,y4,x1,y1,le,re);
 for(y=0;y<500;y++)
 {
 if(le[y]<=re[y])
-for(i=(int) le[y]; i<(int) re[y]; i++)
+for(i=(int)le[y]; i<(int)re[y]; i++)
 draw_pixel(i,y,BLACK);
 }
 }
