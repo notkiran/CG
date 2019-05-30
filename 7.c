@@ -2,8 +2,7 @@
 #include<stdio.h>
 #include<GL/glut.h>
 typedef float point[3];
-point v[]={{0.0,0.0,1.0},{0.0,1.0,0.0},
-{-1.0,-0.5,0.0}, {1.0,-0.5,0.0}};
+point v[]={{0.0,0.0,1.0},{0.0,1.0,0.0},{-1.0,-0.5,0.0},{1.0,-0.5,0.0}};
 int n;
 void triangle(point a,point b,point c)
 {
@@ -55,11 +54,9 @@ glViewport(0,0,w,h);
 glMatrixMode(GL_PROJECTION);
 glLoadIdentity();
 if(w<=h)
-glOrtho(-2.0,2.0,-2.0*(GLfloat)h/(GLfloat)w,
-2.0*(GLfloat)h/(GLfloat)w,-10.0,10.0);
+glOrtho(-2.0*(GLfloat)h/(GLfloat)w,2.0*(GLfloat)h/(GLfloat)w,-2.0,2.0,-10.0,10.0);
 else
-glOrtho(-2.0*(GLfloat)w/(GLfloat)h,
-2.0*(GLfloat)w/(GLfloat)h,-2.0,2.0,-10.0,10.0);
+glOrtho(-2.0*(GLfloat)w/(GLfloat)h,2.0*(GLfloat)w/(GLfloat)h,-2.0,2.0,-10.0,10.0);
 glMatrixMode(GL_MODELVIEW);
 glutPostRedisplay();
 }
@@ -69,7 +66,7 @@ printf("No of Recursive steps/Division: ");
 scanf("%d",&n);
 glutInit(&argc,argv);
 glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB|GLUT_DEPTH);
-glutCreateWindow(" 3D Sierpinski gasket");
+glutCreateWindow("3D Sierpinski Gasket");
 glutReshapeFunc(myReshape);
 glutDisplayFunc(display);
 glEnable(GL_DEPTH_TEST);
