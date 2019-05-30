@@ -20,7 +20,6 @@ glutInit(&argc,argv);
 glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
 glutInitWindowSize(400,400);
 glutInitWindowPosition(800,50);
-
 glutCreateWindow("Bresenham's Line Drawing Algorithm");
 glutDisplayFunc(display);
 glutReshapeFunc(resize);
@@ -38,7 +37,6 @@ void display()
 glClear(GL_COLOR_BUFFER_BIT);
 GLfloat m;
 m=(float)(yTwo-yOne)/(xTwo-xOne);
-
 if(fabs(m)>=1)
 lineBres_GE1(xOne,yOne,xTwo,yTwo,m);
 else
@@ -53,7 +51,6 @@ GLint p= 2*dy - dx;
 GLint twoDy=2*dy;
 GLint twoDyMinusDx=2*(dy-dx);
 GLint x=x0,y=y0;
-
 if(x0>xEnd)
 {
 x=xEnd;
@@ -91,7 +88,6 @@ GLint p=2*dx-dy;
 GLint twoDx=2*dx;
 GLint twoDxMinusDy=2*(dx-dy);
 GLint x=x0,y=y0;
-
 if(y0>yEnd)
 {
 x=xEnd;
