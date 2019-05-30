@@ -30,7 +30,8 @@ glBegin(GL_POINTS);
 glVertex2i(x,y);
 glEnd();
 }
-void scanfill(float x1,float y1,float x2,float y2,float x3,float y3,float x4,float y4) {
+void scanfill(float x1,float y1,float x2,float y2,float x3,float y3,float x4,float y4)
+{
 int le[500],re[500];
 int i,y;
 for(i=0;i<500;i++)
@@ -86,8 +87,8 @@ glutPostRedisplay();
 int main(int argc,char **argv)
 {
 glutInit(&argc,argv);
-glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); glutInitWindowSize(500,500);
-glutInitWindowPosition(0,0);
+glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize(600,600);
 glutCreateWindow("Scan Fill");
 glutDisplayFunc(display);
 glutCreateMenu(menu);
